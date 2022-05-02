@@ -1,0 +1,25 @@
+[
+    {
+      "id": "1",
+      "email": "admin@slack.mx",
+      "password": "123456",
+      "name": "Super Usuario",
+      "username": "admin",
+      "subtitle": "El todopoderoso",
+      "roles": ["admin"],
+      "avatar": "https://react.semantic-ui.com/images/avatar/large/justen.jpg",
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJlbWFpbCI6ImFkbWluQHN1bm55Y2hhdC5jdSIsInBhc3N3b3JkIjoiMTIzNDU2IiwibmFtZSI6IlN1cGVyIE96a2kiLCJ1c2VybmFtZSI6InN1cGVyb3praSIsInN1YnRpdGxlIjoiQWxndW4gZGlhIGFwcmVuZGVyZSBpbmdsZXMiLCJyb2xlcyI6WyJhZG1pbiJdLCJhdmF0YXIiOiJodHRwczovL3JlYWN0LnNlbWFudGljLXVpLmNvbS9pbWFnZXMvYXZhdGFyL2xhcmdlL2p1c3Rlbi5qcGcifQ.C8vAakzjxfvg0-R94Exk1CqQfEazshaiYGIIB6lV1KE"
+    },
+    {
+      "id": "2",
+      "email": "dayana@slack.mx",
+      "password": "123456",
+      "name": "Dayana",
+      "username": "Sassenach",
+      "subtitle": "what if?",
+      "roles": ["client"],
+      "avatar": "https://react.semantic-ui.com/images/avatar/large/jenny.jpg",
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJlbWFpbCI6ImRpYW5hQHN1bm55Y2hhdC5jdSIsInBhc3N3b3JkIjoiMTIzNDU2IiwibmFtZSI6IlByZXR0eSBEIiwidXNlcm5hbWUiOiJkb3F1ZW5kb2M5NiIsInN1YnRpdGxlIjoiVG9tYXRvIG9yIFRvbWF0b2U_Iiwicm9sZXMiOlsiY2xpZW50Il0sImF2YXRhciI6Imh0dHBzOi8vcmVhY3Quc2VtYW50aWMtdWkuY29tL2ltYWdlcy9hdmF0YXIvbGFyZ2UvamVubnkuanBnIn0.2RJgKjZeAxlrE4PIq31J91ckxzfh7yVFPXfzM9bg4PA"
+    }
+  ]
+  

@@ -1,0 +1,81 @@
+.img-fond-log{
+    background-image: url('../../../assets/img/call-in-logo.png');
+    background-position: center;
+    background-size: cover;
+}
+.formulario{
+    background-color: #fff;
+}
+.hola{
+    padding-bottom: 25px;
+}
+.login-color{
+    margin-bottom: -18px;
+    color:#2C3286;
+}
+.login-links{
+    color: #7E7E7E !important;
+    font-size: 16px;
+    
+}
+.container{
+    max-width: 850px !important;
+}
+.form-login  {
+    border-radius: 4px;
+}
+.icon-input{
+    background-color: #fff;
+    border-right: 0;
+    font-size: 20px;
+}
+.forgot-password{
+    margin-top: 6px; 
+    float: right; 
+    color: #9d9696;
+}
+.btn-login{
+    background-color:#00AFE7;
+    color:white;
+    border-radius: 20px;
+
+}
+.lbl-register{
+    text-decoration: none;
+    color:#C3C3C3;
+}
+.lbl-register:hover{
+    color:#00AFE7
+}
+.lbl-cuenta{
+    color:#9d9696;
+}
+.icon-input{
+    background-color: #fff;
+    border-right: 0;
+    font-size: 20px;
+    height: 38px;
+    color: #C3C3C3;
+}
+.modal-header{
+    border-bottom: 0px solid #dee2e6;
+    background-color: #3F87F5;
+    padding: 0;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    color: white;
+    font-style: italic;
+    font-family: auto-webkit-body;
+}
+.agen-stilo{
+    font-size:16px;
+    font-family: 'lexend';
+    padding-top: 5px;
+    
+}
+.btn-save
+{
+  border-radius: 20px;
+  background-color:#3F87F5;
+  color:white;
+}

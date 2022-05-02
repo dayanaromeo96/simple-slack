@@ -1,0 +1,15 @@
+.sidebar-option-container{
+    display:flex;
+    font-size:12px;
+    align-items:center;
+    padding-left:2px;
+    cursor:pointer;
+}
+.sidebar-option-container:hover{
+    opacity:0.9;
+    background-color:#340e36;
+}
+.sidebar-option-channel{
+    padding:10px 0;
+font-weight:300;
+}
