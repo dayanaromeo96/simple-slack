@@ -1,8 +1,10 @@
 import React from 'react';
 import userData from "../../context/user.json";
+import { useChannel } from './useChannel.hook';
 
 function useLogin(usuario, password) {
     const [isAuthenticated, setIsAuthenticated] = React.useState(false);
+    const {removeChannel} = useChannel();
 
     React.useEffect(() => {
         const token = localStorage.getItem('token');
@@ -25,9 +27,11 @@ function useLogin(usuario, password) {
         })
     }
     const logout = () => {
+        removeChannel();
         localStorage.removeItem('token');
         localStorage.removeItem('channeList')
         setIsAuthenticated(false);
+        debugger
     }
     function findUser(usuario, password) {
         const response = (userData).find((user) => user.name === usuario && user.password === password)

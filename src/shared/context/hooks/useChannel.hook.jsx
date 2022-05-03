@@ -11,10 +11,14 @@ function useChannel(newItem) {
             setListChannel(listChannel);
         }
     };
+    function removeChannel(){
+        setListChannel([]);
+    }
     return {
         listChannel,
         saveItem,
-        setListChannel
+        setListChannel,
+        removeChannel
     };
 }
 
