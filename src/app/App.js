@@ -9,16 +9,9 @@ import { Chat } from '../app/pages/chat/Chat'
 
 function App() {
   const {
-    isAuthenticated,
-    setIsAuthenticated
+    isAuthenticated
   } = React.useContext(LoginContext);
 
-  useEffect(() => {
-    const token = localStorage.getItem('token');
-    if (token) {
-      setIsAuthenticated(true);
-    }
-  }, [isAuthenticated])
   return (
     <div className="App">
       <BrowserRouter>
