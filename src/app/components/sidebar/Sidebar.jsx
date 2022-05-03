@@ -18,18 +18,13 @@ import { LoginContext } from '../../../shared/context/login.provider';
 const Sidebar = () => {
     const {
         listChannel,
-        channel,
         setListChannel
     } = React.useContext(LoginContext);
 
     React.useEffect(() => {
-        const localStorageList = localStorage.getItem("channeList");
-        let listChannel = "";
-        if (localStorageList) {
-            listChannel = JSON.parse(localStorageList);
-            setListChannel(listChannel);
-        }
-    }, [channel]);
+        if (localStorage.getItem("channeList"))
+            setListChannel(JSON.parse(localStorage.getItem("channeList")));
+    }, [setListChannel]);
 
     return (
         <div className="sidebar-content">

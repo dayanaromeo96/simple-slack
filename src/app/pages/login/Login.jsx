@@ -12,11 +12,8 @@ const Login = () => {
 
     function handleSubmit(evt) {
         evt.preventDefault();
-        console.log("user", formRef)
         const usuario = formRef.current[0].value;
         var password = formRef.current[1].value;
-        console.log("usuario", usuario);
-        console.log("usuario", password);
         login(usuario,password);
     }
     return (
