@@ -1,82 +1,46 @@
-import React  from 'react';
-import userData from "../context/user.json";
+import React from 'react';
+import { useChannel } from './hooks/useChannel.hook';
+import { useLogin } from './hooks/useLogin.hook';
 
 const LoginContext = React.createContext();
 
 function LoginProvider(props) {
-    const [isAuthenticated, setIsAuthenticated] = React.useState(false);
-    const [listChannel, setListChannel] = React.useState([]);
-    const [idChannel, setIdChannel] = React.useState([]);
-    const [channel,setChannel]=React.useState([]);
+  const { listChannel, saveItem, setListChannel } = useChannel();
+  const { isAuthenticated,
+    login,
+    logout } = useLogin();
+  const [idChannel, setIdChannel] = React.useState([]);
+  const [channel, setChannel] = React.useState([]);
 
-    function saveItem(newItem){
-      try {
-        listChannel.push(newItem)
-        const stringifiedItem = JSON.stringify(listChannel);
-        console.log("aqui",listChannel);
-        localStorage.setItem("channeList", stringifiedItem);
-        setListChannel(listChannel);
-      } catch(error) {
-       // setError(error);
-      }
-    };
+  function saveMessage(newMessage, channelFind) {
+    let messageIndex;
+    if (channelFind.message) {
 
-    function saveMessage(newMessage,channelFind){
-      let messageIndex;
-      if(channelFind.message){
-
-         messageIndex=channelFind.message;
-      }else{
-        messageIndex=[];
-      }
-        messageIndex.push(newMessage);
-        channelFind.message=messageIndex;
-        const channelIndex = listChannel.findIndex(e => e.id === channelFind.id);
-        listChannel[channelIndex]=channelFind;
-        const stringifiedItem = JSON.stringify(listChannel);
-        localStorage.setItem("channeList", stringifiedItem);
-        setListChannel(listChannel);
+      messageIndex = channelFind.message;
+    } else {
+      messageIndex = [];
     }
-
-    function login (usuario,password) {
-        return new Promise((resolve, reject) => {
-          setTimeout(() => {
-            const response = findUser(usuario,password);
-            console.log("json",response);
-            if (response) {
-              localStorage.setItem('token', response.token);
-              resolve(response);
-              setIsAuthenticated(true);
-            } else {
-            }
-          }, 2000)
-        })
-      }
-      const logout = () => {
-        localStorage.removeItem('token');
-        localStorage.removeItem('channeList')
-        setIsAuthenticated(false);
-      }
-      function findUser(usuario,password) {
-        const response = (userData).find((user) => user.name === usuario && user.password === password)
-        return response || undefined
-      }
-
+    messageIndex.push(newMessage);
+    channelFind.message = messageIndex;
+    const channelIndex = listChannel.findIndex(e => e.id === channelFind.id);
+    listChannel[channelIndex] = channelFind;
+    const stringifiedItem = JSON.stringify(listChannel);
+    localStorage.setItem("channeList", stringifiedItem);
+    setListChannel(listChannel);
+  }
   return (
     <LoginContext.Provider value={{
-    login,
-    isAuthenticated,
-    setIsAuthenticated,
-    listChannel,
-    setListChannel,
-    saveItem,
-    idChannel,
-    setIdChannel,
-    saveMessage,
-    channel,
-    setChannel,
-    logout
-    
+      login,
+      isAuthenticated,
+      listChannel,
+      saveItem,
+      idChannel,
+      setIdChannel,
+      saveMessage,
+      channel,
+      setChannel,
+      logout,
+      setListChannel
     }}>
       {props.children}
     </LoginContext.Provider>

@@ -18,21 +18,19 @@ import { LoginContext } from '../../../shared/context/login.provider';
 const Sidebar = () => {
     const {
         listChannel,
-        setListChannel,
         channel,
-       } = React.useContext(LoginContext);
-      
+        setListChannel
+    } = React.useContext(LoginContext);
+
     React.useEffect(() => {
-            const localStorageList = localStorage.getItem("channeList");
-            let listChannel="";
-            if (!localStorageList) {
-              listChannel=[];
-            } else {
-                listChannel = JSON.parse(localStorageList);
-            }
+        const localStorageList = localStorage.getItem("channeList");
+        let listChannel = "";
+        if (localStorageList) {
+            listChannel = JSON.parse(localStorageList);
             setListChannel(listChannel);
-      },[channel]);
-      
+        }
+    }, [channel]);
+
     return (
         <div className="sidebar-content">
             <div className="sidebar-header">
@@ -44,7 +42,7 @@ const Sidebar = () => {
                 </div>
                 <CreateIcon className="sidebar-icon" />
             </div>
-            <SidebarOption Icon={InsertCommentIcon} title="Threads"/>
+            <SidebarOption Icon={InsertCommentIcon} title="Threads" />
             <SidebarOption Icon={InboxIcon} title="Mentions & reactions" />
             <SidebarOption Icon={DraftsIcon} title="Saved items" />
             <SidebarOption Icon={BookmarkBorderIcon} title="Channel browser" />
@@ -56,14 +54,12 @@ const Sidebar = () => {
             <SidebarOption Icon={ExpandMoreIcon} title="Channels" />
             <hr />
             <SidebarOption Icon={AddIcon} addChannelOption title="Add Channel" />
-           {console.log("wwwww",listChannel)} 
             {listChannel?.map(i => (
-           <SidebarOption title={i.name} key={i.id} id={i.id} listChannel={listChannel} setListChannel={setListChannel}
-        
-          />
-        ))} 
-        </div>
+                <SidebarOption title={i.name} key={i.id} id={i.id} listChannel={listChannel}
 
+                />
+            ))}
+        </div>
     );
 };
 
